@@ -1,0 +1,68 @@
+
+/* General Styles
+----------------------------------------*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(234, 133, 144);
+    opacity: 90%;
+    font-family: Helvetica, sans-serif;
+}
+
+/* Header
+----------------------------------------*/
+
+#front-banner { /* div that houses img */
+    width: 100%;
+    overflow: hidden;
+    max-height: 480px; /* controls the max height of banner */
+}
+
+#front-banner img {
+    width: 60%;
+    height: auto;
+    display:flex;
+    object-fit:fill;
+}
+
+a:hover {
+    background-color: rgb(234, 133, 144);
+    color: aliceblue;
+}
+
+/* Main
+----------------------------------------*/
+
+
+/* Footer
+----------------------------------------*/
+
+footer {
+    background-color: #421818;
+}
+
+/* Button and Link Styles
+----------------------------------------*/
+
+
+/* Media Queries
+----------------------------------------*/
+@media (max-width: 600px){
+    body{
+        font-size: 2em;
+    }
+
+}
+
+@media (max-width: 750px){
+    body{
+        font-size: 2em;
+    }
+
+}
+
+@media screen and (max-width: 1000px) {
+    #background {display: none;}
+    #training {display: none;}
+    #contact {display: none;}
+  }
