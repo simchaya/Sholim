@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="He" dir="rtl"> <!--setting language to He - hebrew (default is En - English), and using rtl (right to left) bootstrap experimental feature -->
+<!--setting language to He - hebrew (default is En - English), and using rtl (right to left) bootstrap experimental feature -->
+<html lang="He" dir="rtl">
+
 <!-- -------------HEAD------------->
 
 <head>
@@ -12,13 +14,18 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+    <!-- Javascript code -->
+    <script src="starter.js" defer></script>
     <!-- placing the CSS here will override the bootstrap -->
     <link rel="stylesheet" href="./CSS/styles.css">
 </head>
+
 <!-- -------------BODY------------->
 
 <body>
+    
 <!-- -------------HEADER------------->
+
     <header>
         <div class="container-fluid">
             <p class="text-end">בס״ד </p> <!-- this is a Hebrew greeting-->
@@ -36,29 +43,66 @@
             </div>
         </div>
     </header>
+
 <!-- -------------MAIN------------->
+
     <main>
         <div class="container-fluid">
-            <article>
-                <h2 class="h2 text-center text-muted">Email: lilian.shlavim@gmail.com</h1>
-                <h2 class="h2 text-center text-muted">Phone: 0547884501</h1>
-            </article>
+            <div class="card" style="width: 18rem;"> <!-- card that hosts the contact form -->
+                <div class="card-body">
+                    <h5 class="card-title">השאירי פרטים ואחזור אלייך</h5>
+                    <form id="contactForm" autocomplete="on"> <!-- autocomplete="on" has been added to the <form> tag to explicitly allow autofill on the entire form. this was needed to address Chrome warning and for better user experience-->
+                        <div class="form-group">
+                            <label for="email">כתובת אימייל</label>
+                            <input type="email" class="form-control" id="email" name="email"
+                                placeholder="הקלידי כתובת אימייל" autocomplete="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="first_name">שם פרטי</label>
+                            <input type="text" class="form-control" id="first_name" name="first_name"
+                                placeholder="הקלידי שם פרטי" autocomplete="given-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">שם משפחה</label>
+                            <input type="text" class="form-control" id="last_name" name="last_name"
+                                placeholder="הקלידי שם משפחה" autocomplete="family-name" required>
+                        </div>
+                        <button type="submit" id="submitButton" class="btn btn-primary">שמירה</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Message -->
+        <div class="response" id="successMessage" style="display: none;">
+            <div class="success-message">
+                <p>הפרטים הושלמו בהצלחה! תודה על שליחת הפנייה.</p>
+            </div>
+        </div>
+
+        <!-- Returns saved contact details -->
+        <div class="container-fluid">
+            <p id="emailResponse"></p>
+            <p id="firstNameResponse"></p> 
+            <p id="lastNameResponse"></p>
         </div>
     </main>
+
 <!-- -------------FOOTER------------->
+
+<footer class="mt-5 bg-light text-center ">
     <div class="container-fluid">
         <div class="shadow mb-5">
-            <footer class="mt-5 bg-light text-center ">
-                <div class="logo" style="background-color: rgb(247, 208, 193);">
-                    <a class="navbar-brand" href="#">
-                        <img src="./images/logo.jpeg" alt="logo" width="400" height="auto" class="img-fluid">
-                    </a>
-                </div>
-                <p class="lead" style="background-color: rgb(247, 208, 193);">&copy;<small>2025 לאה ליליאן ביטון Web
-                        design: Simchaya</small></p>
-            </footer>
+            <div class="logo" style="background-color: rgb(247, 208, 193);">
+                <a class="navbar-brand" href="#">
+                    <img src="./images/logo.jpeg" alt="logo" width="400" height="auto" class="img-fluid">
+                </a>
+            </div>
+            <p class="lead" style="background-color: rgb(247, 208, 193);">&copy;<small>2025 לאה ליליאן ביטון Web
+                    design: Simchaya</small></p>
         </div>
     </div>
+</footer>
 
 </body>
 
